@@ -1,64 +1,88 @@
 🖼️ Galeria de Imagens
 
-API REST para gerenciamento e compartilhamento de imagens, desenvolvida com Java e Spring Boot.
+Uma API REST para upload, gerenciamento e pesquisa de imagens, desenvolvida com Java e Spring Boot.
 
-🚀 Tecnologias
+🛠️ Tecnologias
+
+
+
+
+
+
 Java 17+
 Spring Boot
 Spring Security
-JWT
 Spring Data JPA
+JWT
 PostgreSQL
 Maven
 JUnit / Mockito
-Swagger / OpenAPI
 ✨ Funcionalidades
-Cadastro e autenticação de usuários
-Autenticação com JWT
-Controle de acesso aos endpoints
+👤 Autenticação
+Cadastro de usuários
+Login com e-mail e senha
+Autenticação utilizando JWT
+Controle de acesso
+Logout
+🖼️ Imagens
 Upload de imagens
 Suporte a PNG, JPEG e GIF
-Validação de tamanho e formato dos arquivos
-Cadastro de tags
+Validação de formato e tamanho
+Cadastro de nome e tags
 Pesquisa por nome, tag e extensão
-Galeria de imagens
+Visualização em galeria
 Visualização da imagem em tamanho real
-Tratamento de erros e notificações das operações
 🔐 Autenticação
 
-Após o login, a API retorna um token JWT que deve ser enviado nas requisições protegidas:
+Após realizar o login, a API retorna um JWT que deve ser enviado nas requisições protegidas:
 
-Authorization: Bearer <token>
+Authorization: Bearer <seu-token>
 
-🌐 Principais endpoints
+📌 Endpoints
 Método	Endpoint	Descrição
-POST	/api/auth/register	Cadastro
-POST	/api/auth/login	Login
-POST	/api/auth/logout	Logout
-POST	/api/images	Upload de imagem
-GET	/api/images	Pesquisa de imagens
-GET	/api/images/{id}	Detalhes da imagem
-GET	/api/images/{id}/file	Imagem em tamanho real
-⚙️ Como executar
-
-Clone o projeto:
-
+POST	/api/auth/register	Criar conta
+POST	/api/auth/login	Realizar login
+POST	/api/auth/logout	Encerrar sessão
+POST	/api/images	Publicar imagem
+GET	/api/images	Pesquisar imagens
+GET	/api/images/{id}	Consultar imagem
+GET	/api/images/{id}/file	Visualizar arquivo
+🚀 Como executar
+1. Clone o repositório
 git clone https://github.com/seu-usuario/seu-repositorio.git
 cd seu-repositorio
 
+2. Configure o banco de dados
 
-Configure o banco de dados e as variáveis de ambiente.
+Crie um banco PostgreSQL e configure as credenciais no application.properties ou através de variáveis de ambiente.
 
-Execute:
-
+3. Execute a aplicação
 ./mvnw spring-boot:run
 
 
-Ou:
+No Windows:
 
-./mvnw clean package
-java -jar target/*.jar
+mvnw.cmd spring-boot:run
 
-📌 Status
 
-🚧 Em desenvolvimento.
+A API estará disponível em:
+
+http://localhost:8080
+
+🧪 Testes
+
+Execute os testes com:
+
+./mvnw test
+
+📚 Documentação
+
+A API pode ser documentada e testada através do Swagger/OpenAPI.
+
+http://localhost:8080/swagger-ui/index.html
+
+📈 Status
+
+🚧 Em desenvolvimento
+
+Desenvolvido com ☕ Java + Spring Boot
